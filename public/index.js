@@ -51,7 +51,7 @@ bot.on("document", async (context) => {
     )
   ).arrayBuffer());
   console.log(doc);
-  fs.writeFileSync(__dirname + "/public/polotno.json",doc, "binary");
+  fs.writeFileSync(__dirname + "/polotno.json",doc, "binary");
   pixels = require("./polotno.json")
 })
 
