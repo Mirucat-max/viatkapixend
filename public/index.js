@@ -37,7 +37,7 @@ io.on("connection", (socket) => {
       if (Object.keys(pixels[x]).length === 0)
         delete pixels[x];
     }
-    fs.writeFileSync(__dirname + "/polotno.json", JSON.stringify(pixels));
+    fs.writeFileSync(__dirname + "/public/polotno.json", JSON.stringify(pixels));
     socket.broadcast.emit("delete_pixels", pixelsToBeDeleted);
   });
 })
@@ -51,7 +51,8 @@ bot.on("document", async (context) => {
     )
   ).arrayBuffer());
   console.log(doc);
-  fs.writeFileSync(__dirname + "/polotno.json",doc, "binary");
+  fs.writeFileSync(__dirname + "/public/polotno.json",doc, "binary");
+  pixels = require("./polotno.json")
 })
 
 setInterval(() => {
