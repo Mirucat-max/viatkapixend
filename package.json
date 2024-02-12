@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "socket.io": "^4.7.4",
+    "steal-socket.io": "^4.2.0",
+    "telegraf": "^4.15.3"
+  }
+}

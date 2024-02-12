@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelpex</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="loading">
+        <img src="./assets/loading.gif" alt="Loading..." id="loading-gif" />
+        <img src="./assets/Logo.png" alt="animated-logo" id="animated-logo" />
+    </div>
+
+    <div id="disconnected">
+        <div id="disconnected-box">
+            <img src="./assets/error.png" alt="Disconnected..." id="disconnected-img" />
+            <p>You've been disconnected from the server because of inactivity.</p>
+            <button onclick="reconnect()">Reconnect</button>
+        </div>
+    </div>
+
+    <div id="controls-container">
+
+        <div id="controls-tutorial">
+
+        </div>
+        <div id="arrow-container" onclick="openCloseControls()">
+
+
+            <img src="./assets/arrow.png" alt="Arrow" id="arrow" />
+        </div>
+
+
+    </div>
+    <div id="earse" onclick="enableDisableEarse()">
+        <img src="./assets/earse.png" alt="plusImg" id="earseimg">
+    </div>
+    <div id="plus" onclick="zoomPlus()">
+        <img src="./assets/plus.png" alt="plusImg" id="plusimg">
+    </div>
+    <div id="minus" onclick="zoomMinus()">
+        <img src="./assets/minus.png" alt="minusImg" id="minusimg">
+    </div>
+
+    <script>var isDrawing = false;</script>
+    <script>var isEarse = false;</script>
+    <script src="loading.js"></script>
+
+
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script>var socket = io();</script>
+    <script src="socket.js"></script>
+
+
+
+    <input type="color" id="color-picker" value="#000000" />
+    <canvas id="canvas"></canvas>
+
+    <script src="panzoom.js"></script>
+    <script src="timer.js"></script>
+    <script src="canvas.js"></script>
+
+</body>
+
+</html>
