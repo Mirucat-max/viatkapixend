@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
         pixels[x][y] = pixelsToAdd[x][y];
       }
     }
-    fs.writeFileSync(__dirname + "/polotno.json", JSON.stringify(pixels));
+    fs.writeFileSync("./polotno.json", JSON.stringify(pixels));
     io.sockets.emit("add_pixels", pixelsToAdd)
   })
   socket.on("delete_pixels", (pixelsToBeDeleted) => {
@@ -37,7 +37,7 @@ io.on("connection", (socket) => {
       if (Object.keys(pixels[x]).length === 0)
         delete pixels[x];
     }
-    fs.writeFileSync(__dirname + "/polotno.json", JSON.stringify(pixels));
+    fs.writeFileSync("./polotno.json", JSON.stringify(pixels));
     socket.broadcast.emit("delete_pixels", pixelsToBeDeleted);
   });
 })
